@@ -127,7 +127,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Adana Kebap", {
         ent = "adana",
-        model = "models/adana/adana.mdl",
+        model = "models/foods/adanakebap/adanakebap.mdl",
         price = 3000,
         max = 0,
         allowed = TEAM_ASCI,
@@ -137,7 +137,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Mercimek Çorbası", {
         ent = "corba",
-        model = "models/corba/corba.mdl",
+        model = "models/foods/corba/corba.mdl",
         price = 1000,
         max = 0,
         allowed = TEAM_ASCI,
@@ -147,7 +147,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Çay", {
         ent = "tea",
-        model = "models/tea/tea.mdl",
+        model = "models/foods/tea/tea.mdl",
         price = 100,
         max = 0,
         allowed = TEAM_ASCI,
@@ -157,7 +157,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Ekmek", {
         ent = "ekmek",
-        model = "models/ekmek/ekmek.mdl",
+        model = "models/foods/ekmek/ekmek.mdl",
         price = 10,
         max = 0,
         allowed = {TEAM_ASCI, TEAM_BAKKAL},
@@ -165,19 +165,9 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
         category = "Turkish Food Mod / Yemekler",
     })
 
-    DarkRP.createEntity("Tost", {
-        ent = "tost",
-        model = "models/tost/tost.mdl",
-        price = 800,
-        max = 0,
-        allowed = TEAM_ASCI,
-        cmd = "buytost",
-        category = "Turkish Food Mod / Yemekler",
-    })
-
     DarkRP.createEntity("Lahmacun", {
         ent = "lahmacun",
-        model = "models/lahmacun/lahmacun.mdl",
+        model = "models/foods/lahmacun/lahmacun.mdl",
         price = 800,
         max = 0,
         allowed = TEAM_ASCI,
@@ -187,7 +177,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Sucuklu Yumurta", {
         ent = "sckegg",
-        model = "models/sckegg/sckegg.mdl",
+        model = "models/foods/sckegg/sckegg.mdl",
         price = 1500,
         max = 0,
         allowed = TEAM_ASCI,
@@ -197,7 +187,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Patates Köfte", {
         ent = "patkof",
-        model = "models/patkof/patkof.mdl",
+        model = "models/foods/patkof/patkof.mdl",
         price = 5000,
         max = 0,
         allowed = TEAM_ASCI,
@@ -207,7 +197,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Gofret", {
         ent = "gofret",
-        model = "models/gofret/gofret.mdl",
+        model = "models/foods/gofret/gofret.mdl",
         price = 1000,
         max = 0,
         allowed = TEAM_BAKKAL,
@@ -217,7 +207,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Şalgam", {
         ent = "salgam",
-        model = "models/salgam/salgam.mdl",
+        model = "models/drinks/salgam/salgam.mdl",
         price = 350,
         max = 0,
         allowed = {TEAM_ASCI, TEAM_BAKKAL},
@@ -227,7 +217,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Gazoz", {
         ent = "gazoz",
-        model = "models/gazoz/gazoz.mdl",
+        model = "models/drinks/gazoz/gazoz.mdl",
         price = 1500,
         max = 0,
         allowed = {TEAM_ASCI, TEAM_BAKKAL},
@@ -237,7 +227,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Ayran", {
         ent = "ayran",
-        model = "models/ayran/ayran.mdl",
+        model = "models/drinks/ayran/ayran.mdl",
         price = 100,
         max = 0,
         allowed = {TEAM_ASCI, TEAM_BAKKAL},
@@ -245,29 +235,9 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
         category = "Turkish Food Mod / İçecekler",
     })
 
-    DarkRP.createEntity("Kola", {
-        ent = "kola",
-        model = "models/cola/cola.mdl",
-        price = 1000,
-        max = 0,
-        allowed = {TEAM_ASCI, TEAM_BAKKAL},
-        cmd = "buykola",
-        category = "Turkish Food Mod / İçecekler",
-    })
-
-    DarkRP.createEntity("Fanta", {
-        ent = "fanta",
-        model = "models/fanta/fanta.mdl",
-        price = 900,
-        max = 0,
-        allowed = {TEAM_ASCI, TEAM_BAKKAL},
-        cmd = "buyfanta",
-        category = "Turkish Food Mod / İçecekler",
-    })
-
     DarkRP.createEntity("Metro", {
         ent = "metro",
-        model = "models/metro/metro.mdl",
+        model = "models/foods/metro/metro.mdl",
         price = 1000,
         max = 0,
         allowed = TEAM_BAKKAL,
@@ -277,7 +247,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Hoşbeş", {
         ent = "hosbes",
-        model = "models/hosbes/hosbes.mdl",
+        model = "models/foods/hosbes/hosbes.mdl",
         price = 1000,
         max = 0,
         allowed = TEAM_BAKKAL,
@@ -287,7 +257,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Dondurma Tezgahı", {
         ent = "ice-stand",
-        model = "models/ice-stand/ice-stand.mdl",
+        model = "models/stands/ice_stand/ice_stand.mdl",
         price = 1500,
         max = 1,
         allowed = TEAM_DONDURMACI,
@@ -297,7 +267,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Çiğköfte Tezgahı", {
         ent = "kofte_stand",
-        model = "models/kofte_stand/kofte_stand.mdl",
+        model = "models/stands/cigkofte_stand/cigkofte_stand.mdl",
         price = 1500,
         max = 1,
         allowed = TEAM_CIGKOFTECI,
@@ -307,7 +277,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
 
     DarkRP.createEntity("Büfe", {
         ent = "bufe",
-        model = "models/newskiosk.mdl",
+        model = "models/stands/bakkal_stand/bakkal.mdl",
         price = 1500,
         max = 0,
         allowed = TEAM_BAKKAL,
