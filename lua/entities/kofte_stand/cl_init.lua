@@ -8,6 +8,7 @@ sound.Add({
 })
 
 include("shared.lua")
+include("tfm_config.lua")
 
 surface.CreateFont("kofte_durum_f1", {
     font = "Arial",
