@@ -36,6 +36,9 @@ end
 net.Receive("tfm_pilav_network", function(len, pl)
     local stand = net.ReadEntity()
     local getpilav = net.ReadUInt(3)
+    -- Entity Check
+    if(stand:GetClass() != "pilav_stand") then return end
+
     if (antispamsystem[pl:SteamID()] or 0) > CurTime() then return end
     antispamsystem[pl:SteamID()] = CurTime() + 1
 

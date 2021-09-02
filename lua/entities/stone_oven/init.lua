@@ -37,10 +37,20 @@ net.Receive("tfm_stone_oven_network" , function(len,ply)
     local oven = net.ReadEntity()
     local read_flags = net.ReadUInt(2)
 
+    -- Entity check
+    if(oven:GetClass() != "stone_oven") then return end
+    -- Players can spam network for creating mass entities
+    -- So we need to dont allow while baking.
+    if(oven.making == true) then return end
+    
     net.Start("tfm_stone_oven_network")
     net.WriteEntity(oven)
     net.WriteUInt(2,3)
     net.Send(ply)
+
+    
+
+
 
     ply:EmitSound("fire.mp3")
 
