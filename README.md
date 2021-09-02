@@ -2,3 +2,5 @@
 Karşınızda TFM'nin son hali
 
 Content : https://steamcommunity.com/sharedfiles/filedetails/?id=2073492700
+
+Contenti workshop koleksiyonunuza eklemeyi unutmayınız
