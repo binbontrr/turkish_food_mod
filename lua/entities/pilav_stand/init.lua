@@ -3,6 +3,7 @@ AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("shared.lua")
 include("shared.lua")
 include("tfm_config.lua")
+AddCSLuaFile("tfm_config.lua")
 util.AddNetworkString("tfm_pilav_network")
 
 function ENT:Initialize()
