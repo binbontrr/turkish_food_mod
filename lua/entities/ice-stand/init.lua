@@ -36,6 +36,9 @@ end
 net.Receive("tfm_icecreem_network", function(len, pl)
     local stand = net.ReadEntity()
     local read_ice_flag = net.ReadUInt(4)
+    -- Entity Check
+    if(stand:GetClass() != "ice-stand") then return end
+
     if (antispamsystem[pl:SteamID()] or 0) > CurTime() then return end
     antispamsystem[pl:SteamID()] = CurTime() + 1
 
