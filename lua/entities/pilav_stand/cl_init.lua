@@ -1,4 +1,5 @@
 include("shared.lua")
+include("tfm_config.lua")
 
 local tfm_colors = {
     ["white"] = Color(255, 255, 255),
