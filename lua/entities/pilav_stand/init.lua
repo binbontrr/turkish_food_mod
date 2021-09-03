@@ -76,6 +76,7 @@ net.Receive("tfm_pilav_network", function(len, pl)
                 net.WriteEntity(stand)
                 net.WriteUInt(3, 3)
                 net.Send(pl)
+                stand.making = false
             end)
         elseif getpilav == 2 then
             timer.Create("tfm_pilavstand_timer", TFM.Stands["pilav_stand"].time_of_pilavs, 1, function()
@@ -88,6 +89,7 @@ net.Receive("tfm_pilav_network", function(len, pl)
                 net.WriteEntity(stand)
                 net.WriteUInt(4, 3)
                 net.Send(pl)
+                stand.making = false
             end)
         elseif getpilav == 3 then
             timer.Create("tfm_pilavstand_timer", TFM.Stands["pilav_stand"].time_of_pilavs, 1, function()
@@ -100,6 +102,7 @@ net.Receive("tfm_pilav_network", function(len, pl)
                 net.WriteEntity(stand)
                 net.WriteUInt(5, 3)
                 net.Send(pl)
+                stand.making = false
             end)
         end
     end
