@@ -46,7 +46,7 @@ net.Receive("tfm_icecreem_network", function(len, pl)
     if pl:GetPos():Distance(stand:GetPos()) < 1000 then
         if DarkRP and pl:Team() == TEAM_DONDURMACI then
             if pl:canAfford(TFM.Stands["ice_stand"].price_of_icecreems) then
-                pl:addMoney(TFM.Stands["ice_stand"].price_of_icecreems)
+                pl:addMoney(-TFM.Stands["ice_stand"].price_of_icecreems)
             else
                 pl:ChatPrint("Dondurmayı karşılamıyorsunuz! (" .. TFM.Stands["ice_stand"].price_of_icecreems .. "TL)")
             end
