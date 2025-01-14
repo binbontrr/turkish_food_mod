@@ -14,8 +14,9 @@ end
 
 function ENT:Use(act, call)
     local food_health = TFM.Foods["kofte_durum"].health
-    if TFM.Foods["kofte_durum"].health < 0 then return end
+    if TFM.Foods["kofte_durum"].health > 0 then 
     act:SetHealth(math.min(act:Health() + food_health, act:GetMaxHealth() + 50))
+    end
     self:Remove()
     act:EmitSound(TFM.Foods["kofte_durum"].eat_sound)
 end

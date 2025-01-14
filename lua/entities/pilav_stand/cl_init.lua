@@ -10,7 +10,8 @@ local tfm_colors = {
 
 local function TFM_PILAV_UI(button_sound,stand)
     local pilav_menu = vgui.Create("DPanel")
-    pilav_menu:SetSize(ScrW() / 4, ScrH() / 4)
+    local scrw, scrh = ScrW(), ScrH()
+    pilav_menu:SetSize(scrw / 4, scrh / 4)
     pilav_menu:Center()
     pilav_menu:MakePopup()
 
@@ -19,8 +20,8 @@ local function TFM_PILAV_UI(button_sound,stand)
     end
 
     local close_pilav_menu = vgui.Create("DButton", pilav_menu)
-    close_pilav_menu:SetSize(ScrW() * 0.02, ScrH() * 0.02)
-    close_pilav_menu:SetPos(ScrW() * 0.22, ScrH() * 0.01)
+    close_pilav_menu:SetSize(scrw * 0.02, scrh * 0.02)
+    close_pilav_menu:SetPos(scrw * 0.22, scrh * 0.01)
     close_pilav_menu:SetColor(tfm_colors["white"])
     close_pilav_menu:SetText("x")
 
@@ -40,8 +41,8 @@ local function TFM_PILAV_UI(button_sound,stand)
     end
 
     local report_btn = vgui.Create("DButton", pilav_menu)
-    report_btn:SetSize(ScrW() * 0.05, ScrH() * 0.04)
-    report_btn:SetPos(ScrW() * 0.01, ScrH() * 0.01)
+    report_btn:SetSize(scrw * 0.05, scrh * 0.04)
+    report_btn:SetPos(scrw * 0.01, scrh * 0.01)
     report_btn:SetText("Hata Bildir")
 
     report_btn.DoClick = function()
@@ -61,8 +62,8 @@ local function TFM_PILAV_UI(button_sound,stand)
     end
 
     local sade_buy = vgui.Create("DButton", pilav_menu)
-    sade_buy:SetSize(ScrW() / 10, ScrH() / 20)
-    sade_buy:SetPos(ScrW() * 0.08, ScrH() * 0.04)
+    sade_buy:SetSize(scrw / 10, scrh / 20)
+    sade_buy:SetPos(scrw * 0.08, scrh * 0.04)
     sade_buy:SetColor(tfm_colors["white"])
     sade_buy:SetText("Sade Pilav")
 
@@ -87,8 +88,8 @@ local function TFM_PILAV_UI(button_sound,stand)
     end
 
     local nohutlu_pilav = vgui.Create("DButton", pilav_menu)
-    nohutlu_pilav:SetSize(ScrW() / 10, ScrH() / 20)
-    nohutlu_pilav:SetPos(ScrW() * 0.08, ScrH() * 0.1)
+    nohutlu_pilav:SetSize(scrw / 10, scrh / 20)
+    nohutlu_pilav:SetPos(scrw * 0.08, scrh * 0.1)
     nohutlu_pilav:SetColor(tfm_colors["white"])
     nohutlu_pilav:SetText("Nohutlu Pilav")
 
@@ -113,8 +114,8 @@ local function TFM_PILAV_UI(button_sound,stand)
     end
 
     local tavuklu_pilav = vgui.Create("DButton", pilav_menu)
-    tavuklu_pilav:SetSize(ScrW() / 10, ScrH() / 20)
-    tavuklu_pilav:SetPos(ScrW() * 0.08, ScrH() * 0.16)
+    tavuklu_pilav:SetSize(scrw / 10, scrh / 20)
+    tavuklu_pilav:SetPos(scrw * 0.08, scrh * 0.16)
     tavuklu_pilav:SetColor(tfm_colors["white"])
     tavuklu_pilav:SetText("Tavuklu Pilav")
 
@@ -163,21 +164,22 @@ net.Receive("tfm_pilav_network", function(len, pl)
         stand.delay = 0
     end
 end)
-
+local drawroundedboxcolor_cache, drawsimpletextcolor_cache = Color(0, 0, 0, 200), Color(255, 255, 255)
 function ENT:Draw()
     self:DrawModel()
     if self.start then
         if self.delay > self.cache then return end
         self.delay = CurTime() + 1
+        local mathdelay = math.Round(self.cache - self.delay) 
         local ang = LocalPlayer():EyeAngles()
         ang = Angle(0, ang.y, 0)
         ang:RotateAroundAxis(ang:Forward(), 180)
         ang:RotateAroundAxis(ang:Right(), 90)
         ang:RotateAroundAxis(ang:Up(), 90)
         cam.Start3D2D(self:WorldSpaceCenter(), ang, 0.1)
-        draw.RoundedBox(10, ScrW() - 1600, ScrH() - 1500, ScrW() * 0.4, ScrH() * 0.2, Color(0, 0, 0, 200))
-        draw.SimpleText(self.pilav_name .. " Pilav Hazırlanıyor... " .. math.Round(self.cache - self.delay) .. " saniye", "ice-stand_f1", ScrW() - 1350, ScrH() - 1450, Color(255, 255, 255), 1, 1)
-        draw.RoundedBox(10, ScrW() - 1580, ScrH() - 1400,(math.Round(self.cache - self.delay)) * (510 / self.n), ScrH() * 0.05, tfm_colors["white"])
+        draw.RoundedBox(10, scrw - 1600, scrh - 1500, scrw * 0.4, scrh * 0.2, drawroundedboxcolor_cache)
+        draw.SimpleText(self.pilav_name .. " Pilav Hazırlanıyor... " .. mathdelay .. " saniye", "ice-stand_f1", scrw - 1350, scrh - 1450, drawsimpletextcolor_cache, 1, 1)
+        draw.RoundedBox(10, scrw - 1580, scrh - 1400,mathdelay * (510 / self.n), scrh * 0.05, tfm_colors["white"])
         cam.End3D2D()
     end
 end

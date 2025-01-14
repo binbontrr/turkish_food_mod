@@ -19,7 +19,8 @@ surface.CreateFont("kofte_durum_f1", {
 
 local function TFM_CIFKOFTE_UI()
     local kofte_stand = vgui.Create("DPanel")
-    kofte_stand:SetSize(ScrW() / 4, ScrH() / 4)
+    local scrw, scrh = ScrW(), ScrH()
+    kofte_stand:SetSize(scrw / 4, scrh / 4)
     kofte_stand:MakePopup()
     kofte_stand:Center()
 
@@ -34,7 +35,7 @@ local function TFM_CIFKOFTE_UI()
     end
 
     local kofte_durum_create = vgui.Create("DButton", kofte_stand)
-    kofte_durum_create:SetSize(ScrW() / 5, ScrH() / 15)
+    kofte_durum_create:SetSize(scrw / 5, scrh / 15)
     kofte_durum_create:SetPos(kofte_stand:GetWide() / 10, kofte_stand:GetTall() / 6)
     kofte_durum_create:SetColor(Color(255, 255, 255))
     kofte_durum_create:SetText("Sade Dürüm " .. TFM.Stands["kofte_stand"].price_normal .. " TL")
@@ -58,7 +59,7 @@ local function TFM_CIFKOFTE_UI()
     end
 
     local hot_kofte_durum_create = vgui.Create("DButton", kofte_stand)
-    hot_kofte_durum_create:SetSize(ScrW() / 5, ScrH() / 15)
+    hot_kofte_durum_create:SetSize(scrw / 5, scrh / 15)
     hot_kofte_durum_create:SetPos(kofte_stand:GetWide() / 10, kofte_stand:GetTall() / 2)
     hot_kofte_durum_create:SetColor(Color(255, 255, 255))
     hot_kofte_durum_create:SetText("Acılı Dürüm " .. TFM.Stands["kofte_stand"].price_normal .. " TL")
@@ -82,8 +83,8 @@ local function TFM_CIFKOFTE_UI()
     end
 
     local kofte_stand_close = vgui.Create("DButton", kofte_stand)
-    kofte_stand_close:SetSize(ScrW() * 0.02, ScrH() * 0.02)
-    kofte_stand_close:SetPos(ScrW() * 0.225,ScrH() * 0.01)
+    kofte_stand_close:SetSize(scrw * 0.02, scrh * 0.02)
+    kofte_stand_close:SetPos(scrw * 0.225,scrh * 0.01)
     kofte_stand_close:SetText("x")
 
     kofte_stand_close.Paint = function(self, w, h)
@@ -107,6 +108,8 @@ end)
 
 ENT.ilerkisure = 0
 
+local drawroundedboxcolor_cache, drawsimpletextcolor_cache, color_red, vector_cache = Color(0,0,0,200), Color(255,255,255,255), Color(255,0,0,255), Vector(0, 0, -7)
+
 function ENT:Draw()
     self:DrawModel()
 
@@ -124,10 +127,10 @@ function ENT:Draw()
         ang:RotateAroundAxis(ang:Forward(), 180)
         ang:RotateAroundAxis(ang:Right(), 90)
         ang:RotateAroundAxis(ang:Up(), 90)
-        cam.Start3D2D(self:WorldSpaceCenter() + Vector(0, 0, -7), ang, 0.1)
-        draw.RoundedBox(10, ScrW() - 1600, ScrH() - 1500, ScrW() * 0.4, ScrH() * 0.2, Color(0, 0, 0, 200))
-        draw.SimpleText("Dürüm Hazırlanıyor..." .. self:GetNWString("kofte_stand_nw1", "0") .. " saniye", "kofte_durum_f1", ScrW() - 1300, ScrH() - 1450, Color(255, 255, 255, 255), 1, 1)
-        draw.RoundedBox(10, ScrW() - 1580, ScrH() - 1400, sure, ScrH() * 0.05, Color(255, 0, 0))
+        cam.Start3D2D(self:WorldSpaceCenter() + vector_cache, ang, 0.1)
+        draw.RoundedBox(10, scrw - 1600, scrh - 1500, scrw * 0.4, scrh * 0.2, drawroundedboxcolor_cache)
+        draw.SimpleText("Dürüm Hazırlanıyor..." .. self:GetNWString("kofte_stand_nw1", "0") .. " saniye", "kofte_durum_f1", scrw - 1300, scrh - 1450, drawsimpletextcolor_cache, 1, 1)
+        draw.RoundedBox(10, scrw - 1580, scrh - 1400, sure, scrh * 0.05, color_red)
         cam.End3D2D()
     else
         self.ilerkisure = 0

@@ -49,6 +49,7 @@ net.Receive("tfm_icecreem_network", function(len, pl)
                 pl:addMoney(-TFM.Stands["ice_stand"].price_of_icecreems)
             else
                 pl:ChatPrint("Dondurmayı karşılamıyorsunuz! (" .. TFM.Stands["ice_stand"].price_of_icecreems .. "TL)")
+                return
             end
         end
 

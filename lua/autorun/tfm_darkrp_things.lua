@@ -1,9 +1,11 @@
+
+local color_red = Color(255, 0, 0, 255)
 hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
     DarkRP.createCategory{
         name = "Turkish Food Mod",
         categorises = "jobs",
         startExpanded = true,
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         canSee = function(ply) return true end,
         sortOrder = 100,
     }
@@ -23,7 +25,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
         name = "Turkish Food Mod / İçecekler",
         categorises = "entities",
         startExpanded = true,
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         canSee = function(ply)
             return ply:Team() == TEAM_ASCI or TEAM_BAKKAL
         end,
@@ -34,7 +36,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
         name = "Turkish Food Mod / Tezgahlar",
         categorises = "entities",
         startExpanded = true,
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         canSee = function(ply)
             return ply:Team() == TEAM_DONDURMACI or TEAM_CIGKOFTECI or TEAM_PILAVCI or TEAM_BAKKAL
         end,
@@ -42,7 +44,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
     }
 
     TEAM_ASCI = DarkRP.createJob("Aşçı", {
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         model = "models/playermodels/foodmodplayermodel.mdl",
         description = [[Bir aşçısın f4 menüden istediğin yemeği yapıp satabilirsin.]],
         weapons = {},
@@ -56,7 +58,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
     })
 
     TEAM_DONDURMACI = DarkRP.createJob("Dondurmacı", {
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         model = "models/playermodels/foodmodplayermodel.mdl",
         description = [[Bir dondurmacısın f4 menüden dondurma,külah ve stand satın alıp ticaret yapabilirsin.]],
         weapons = {},
@@ -70,7 +72,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
     })
 
     TEAM_BAKKAL = DarkRP.createJob("Bakkal", {
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         model = "models/playermodels/foodmodplayermodel.mdl",
         description = [[Bir bakkalsın abur cubur ve çay satıyorsun.]],
         weapons = {},
@@ -84,7 +86,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
     })
 
     TEAM_CIGKOFTECI = DarkRP.createJob("Çiğköfteci", {
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         model = "models/playermodels/foodmodplayermodel.mdl",
         description = [[Bir çiğköftecisin acılı ve acısız çiğköfte satıyorsun.]],
         weapons = {},
@@ -98,7 +100,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
     })
 
     TEAM_PILAVCI = DarkRP.createJob("Pilavcı", {
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         model = "models/playermodels/foodmodplayermodel.mdl",
         description = [[Bir pilavcısın ve 3 çeşit pilav satıyorsun.]],
         weapons = {},
@@ -112,7 +114,7 @@ hook.Add("loadCustomDarkRPItems", "TFM_DarkrpThings", function()
     })
 
     TEAM_FIRINCI = DarkRP.createJob("Fırıncı", {
-        color = Color(255, 0, 0, 255),
+        color = color_red,
         model = "models/playermodels/foodmodplayermodel.mdl",
         description = [[Bir fırıncısın ve Ekmek,Pide ve Lahmacun satıyorsun.]],
         weapons = {},

@@ -23,8 +23,8 @@ function ENT:Initialize()
     self:SetParent(kulah)
 end
 
-hook.Add("PhysgunPickup", "AllowPlayerPickup", function(ply, ent)
-    if (ply:IsPlayer()) and (ent:GetClass() == "creem") then return false end
+hook.Add("PhysgunPickup", "TFM_AllowPlayerPickup", function(ply, ent)
+    if (ent:GetClass() == "creem") then return false end
 end)
 
 function ENT:OnTakeDamage(damage)
@@ -32,9 +32,10 @@ function ENT:OnTakeDamage(damage)
 end
 
 function ENT:Use(act, call)
-    local random_hp = math.random(1, 5)
-    act:SetHealth(math.min(act:Health() + random_hp, act:GetMaxHealth() + 50))
+    local food_health = TFM.Foods["dondurma"].health
+    if TFM.Foods["dondurma"].health > 0 then 
+    act:SetHealth(math.min(act:Health() + food_health, act:GetMaxHealth() + 50))
+    end 
     self:Remove()
-    self:GetParent():Remove()
-    act:EmitSound(Sound("lick.mp3"))
+    act:EmitSound(TFM.Foods["dondurma"].eat_sound)
 end

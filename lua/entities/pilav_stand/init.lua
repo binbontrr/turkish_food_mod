@@ -49,6 +49,7 @@ net.Receive("tfm_pilav_network", function(len, pl)
                 pl:addMoney(-TFM.Stands["pilav_stand"].info_of_pilavs[getpilav].price)
             else
                 DarkRP.notify(pl, 1, 5, "Pilavı karşılamıyorsunuz(" .. TFM.Stands["pilav_stand"].info_of_pilavs[getpilav].price .. "TL)")
+                return
             end
         end
 

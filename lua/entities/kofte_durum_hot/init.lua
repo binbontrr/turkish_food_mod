@@ -23,6 +23,7 @@ function ENT:Use(act,call)
             act:EmitSound("hot.mp3")
             act:Ignite(3)
             timer.Create("kofte_durum_hot_timer", 1, 3, function()
+                if not IsValid(act) then return end
                 act:EmitSound("player/pl_burnpain" .. math.random(1,3) .. ".wav")
             end)
         end)

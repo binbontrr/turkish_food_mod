@@ -64,6 +64,7 @@ net.Receive("tfm_stone_oven_network" , function(len,ply)
             ply:addMoney(-TFM.Stands["stone_oven"].info_of_foods[read_flags].price)
         else
             DarkRP.notify(ply, 0, 3,TFM.Stands["stone_oven"].info_of_foods[read_flags].name .. " yapmak için " .. TFM.Stands["stone_oven"].info_of_foods[read_flags].price .. "TL gerekiyor.")
+            return
         end
     end
 

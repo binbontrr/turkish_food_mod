@@ -41,6 +41,7 @@ net.Receive("tfm_cigkofte_network", function(len, pl)
                     pl:addMoney(-TFM.Stands["kofte_stand"].price_normal)
                 else
                     DarkRP.notify(pl, 1, 5, "Sade Çiğköfteyi karşılamıyorsunuz(" .. TFM.Stands["kofte_stand"].price_normal .. "TL)")
+                    return
                 end
             end
 

@@ -102,6 +102,10 @@ TFM.Foods = {
         model = "models/foods/pide/pide.mdl",
         health = 23,
         eat_sound = "eating.wav"
+    },
+    ["dondurma"] = {
+        health = 10,
+        eat_sound = "lick.mp3"
     }
 }
 

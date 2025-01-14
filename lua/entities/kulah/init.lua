@@ -12,5 +12,5 @@ function ENT:Initialize()
 end
 
 hook.Add("PhysgunPickup", "AllowPlayerPickup", function(ply, ent)
-    if (ply:IsPlayer()) and (ent:GetClass() == "kulah") then return false end
+    if (ent:GetClass() == "kulah") then return false end
 end)

@@ -18,10 +18,11 @@ local tfm_colors = {
 local function TFM_ICECREEM_UI(stand)
     local button_sound = CreateSound(LocalPlayer(), Sound("fm_button1.wav"))
     local ice_creem_menu = vgui.Create("DPanel")
-    ice_creem_menu:SetSize(ScrW() / 4, ScrH() / 2)
-    ice_creem_menu:SetPos(ScrW() / 2 - ice_creem_menu:GetWide() / 2, ScrH() / 1.5)
+    local scrw, scrh = ScrW(), ScrH()
+    ice_creem_menu:SetSize(scrw / 4, scrh / 2)
+    ice_creem_menu:SetPos(scrw / 2 - ice_creem_menu:GetWide() / 2, scrh / 1.5)
     ice_creem_menu:MakePopup()
-    ice_creem_menu:MoveTo(ScrW() / 2 - ice_creem_menu:GetWide() / 2, ScrH() / 2 - ice_creem_menu:GetTall() / 2, 1, 0, -1)
+    ice_creem_menu:MoveTo(scrw / 2 - ice_creem_menu:GetWide() / 2, scrh / 2 - ice_creem_menu:GetTall() / 2, 1, 0, -1)
 
     ice_creem_menu.Paint = function(self, w, h)
         draw.RoundedBox(8, 0, 0, w, h, Color(63, 36, 36))
@@ -34,8 +35,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local close_icecreem = vgui.Create("DButton", ice_creem_menu)
-    close_icecreem:SetSize(ScrW() * 0.02, ScrH() * 0.02)
-    close_icecreem:SetPos(ScrW() * 0.22, ScrH() * 0.01)
+    close_icecreem:SetSize(scrw * 0.02, scrh * 0.02)
+    close_icecreem:SetPos(scrw * 0.22, scrh * 0.01)
     close_icecreem:SetText("x")
 
     close_icecreem.DoClick = function()
@@ -54,8 +55,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local report_btn = vgui.Create("DButton", ice_creem_menu)
-    report_btn:SetSize(ScrW() * 0.05, ScrH() * 0.04)
-    report_btn:SetPos(ScrW() * 0.01, ScrH() * 0.01)
+    report_btn:SetSize(scrw * 0.05, scrh * 0.04)
+    report_btn:SetPos(scrw * 0.01, scrh * 0.01)
     report_btn:SetColor(tfm_colors["white"])
     report_btn:SetText("Hata Bildir")
 
@@ -76,8 +77,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local coco_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    coco_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    coco_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.02)
+    coco_buy_creem:SetSize(scrw / 10, scrh / 20)
+    coco_buy_creem:SetPos(scrw * 0.08, scrh * 0.02)
     coco_buy_creem:SetColor(tfm_colors["white"])
     coco_buy_creem:SetText("Çikolatalı")
 
@@ -101,8 +102,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local sade_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    sade_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    sade_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.08)
+    sade_buy_creem:SetSize(scrw / 10, scrh / 20)
+    sade_buy_creem:SetPos(scrw * 0.08, scrh * 0.08)
     sade_buy_creem:SetColor(tfm_colors["white"])
     sade_buy_creem:SetText("Sade")
 
@@ -126,8 +127,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local green_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    green_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    green_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.14)
+    green_buy_creem:SetSize(scrw / 10, scrh / 20)
+    green_buy_creem:SetPos(scrw * 0.08, scrh * 0.14)
     green_buy_creem:SetColor(tfm_colors["white"])
     green_buy_creem:SetText("Fıstıklı")
 
@@ -151,8 +152,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local berry_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    berry_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    berry_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.20)
+    berry_buy_creem:SetSize(scrw / 10, scrh / 20)
+    berry_buy_creem:SetPos(scrw * 0.08, scrh * 0.20)
     berry_buy_creem:SetColor(tfm_colors["white"])
     berry_buy_creem:SetText("Çilekli")
 
@@ -176,8 +177,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local erik_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    erik_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    erik_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.26)
+    erik_buy_creem:SetSize(scrw / 10, scrh / 20)
+    erik_buy_creem:SetPos(scrw * 0.08, scrh * 0.26)
     erik_buy_creem:SetColor(tfm_colors["white"])
     erik_buy_creem:SetText("Anjelika Erikli")
 
@@ -201,8 +202,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local muz_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    muz_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    muz_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.32)
+    muz_buy_creem:SetSize(scrw / 10, scrh / 20)
+    muz_buy_creem:SetPos(scrw * 0.08, scrh * 0.32)
     muz_buy_creem:SetColor(tfm_colors["white"])
     muz_buy_creem:SetText("Muzlu")
 
@@ -226,8 +227,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local jungle_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    jungle_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    jungle_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.38)
+    jungle_buy_creem:SetSize(scrw / 10, scrh / 20)
+    jungle_buy_creem:SetPos(scrw * 0.08, scrh * 0.38)
     jungle_buy_creem:SetColor(tfm_colors["white"])
     jungle_buy_creem:SetText("Orman Meyveli")
 
@@ -251,8 +252,8 @@ local function TFM_ICECREEM_UI(stand)
     end
 
     local kivi_buy_creem = vgui.Create("DButton", ice_creem_menu)
-    kivi_buy_creem:SetSize(ScrW() / 10, ScrH() / 20)
-    kivi_buy_creem:SetPos(ScrW() * 0.08, ScrH() * 0.44)
+    kivi_buy_creem:SetSize(scrw / 10, scrh / 20)
+    kivi_buy_creem:SetPos(scrw * 0.08, scrh * 0.44)
     kivi_buy_creem:SetColor(tfm_colors["white"])
     kivi_buy_creem:SetText("Kivili")
 
@@ -303,6 +304,8 @@ net.Receive("tfm_icecreem_network", function(len, pl)
     end
 end)
 
+local roundedboxcolor_cache, drawsimpletextcolor_cache = Color(0, 0, 0, 200), Color(255, 255, 255)
+
 function ENT:Draw()
     self:DrawModel()
 
@@ -310,14 +313,15 @@ function ENT:Draw()
         if self.delay > self.cache then return end
         self.delay = CurTime() + 1
         local ang = LocalPlayer():EyeAngles()
+        local scrw, scrh, math_round = ScrW(), ScrH(), math.Round(self.cache - self.delay)
         ang = Angle(0, ang.y, 0)
         ang:RotateAroundAxis(ang:Forward(), 180)
         ang:RotateAroundAxis(ang:Right(), 90)
         ang:RotateAroundAxis(ang:Up(), 90)
         cam.Start3D2D(self:WorldSpaceCenter(), ang, 0.1)
-        draw.RoundedBox(10, ScrW() - 1600, ScrH() - 1500, ScrW() * 0.4, ScrH() * 0.2, Color(0, 0, 0, 200))
-        draw.SimpleText(self.icecreem_name .. " Aromalı Dondurma Hazırlanıyor... " .. math.Round(self.cache - self.delay) .. " saniye", "ice-stand_f1", ScrW() - 1350, ScrH() - 1450, Color(255, 255, 255), 1, 1)
-        draw.RoundedBox(10, ScrW() - 1580, ScrH() - 1400, (math.Round(self.cache - self.delay)) * (510 / self.n), ScrH() * 0.05, self.icecreem_clr)
+        draw.RoundedBox(10, scrw - 1600, scrh - 1500, scrw * 0.4, scrh * 0.2, roundedboxcolor_cache)
+        draw.SimpleText(self.icecreem_name .. " Aromalı Dondurma Hazırlanıyor... " .. math_round .. " saniye", "ice-stand_f1", scrw - 1350, scrh - 1450, drawsimpletextcolor_cache, 1, 1)
+        draw.RoundedBox(10, scrw - 1580, scrh - 1400, (math_round) * (510 / self.n), scrh * 0.05, self.icecreem_clr)
         cam.End3D2D()
     end
 end
